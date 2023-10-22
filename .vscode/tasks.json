@@ -1,0 +1,23 @@
+{
+  // I set up these settings because I had a problem with building
+  // the project using the shortcut (or the button). When I consulted
+  // chatGPT, it said I should add a c_cpp_properties.json file, a
+  // launch.json file, and a tasks.json file. I did that, and it still
+  // didn't work...
+
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build huffman",
+      "type": "shell",
+      "command": "make",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/build"
+      }
+    }
+  ]
+}
