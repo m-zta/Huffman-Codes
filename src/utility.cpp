@@ -86,6 +86,6 @@ std::vector<double> getProbabilities(std::vector<char>& symbolVector) {
     }
 
     fitTo100(probabilities);
-    
+
     return probabilities;
 }

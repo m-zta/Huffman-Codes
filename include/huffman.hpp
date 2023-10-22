@@ -2,13 +2,13 @@
 
 #include <vector>
 
-class Huffman {
+class huffman {
 private:
     std::vector<char> symbolVector;
-    std::vector<int> probabilities;
+    std::vector<double> probabilities;
 
 public:
-    Huffman(std::vector<char> symbolVector = {}, std::vector<int> probabilities = {});
+    huffman(std::vector<char> symbolVector = {}, std::vector<double> probabilities = {});
 
     void getSymbols();
 
