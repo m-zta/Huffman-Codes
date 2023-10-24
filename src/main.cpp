@@ -4,9 +4,11 @@
 #include "utility.hpp"
 
 int main() {
-    std::cout << "Hello!" << std::endl;
-
-    std::vector<char> symbolVector = getSymbols();
+    std::cout << "First enter the characters, than the corresponding probabilites:\n";
+    std::vector<char> symbolVector {};
+    printVector(symbolVector);
+    
+    symbolVector = getSymbols();
     printVector(symbolVector);
     std::vector<double> probVector = getProbabilities(symbolVector);
 
@@ -14,7 +16,7 @@ int main() {
 
     double entropy = calculateEntropy(probVector);
 
-    std::cout << entropy << std::endl;
+    std::cout << "Entropy:\tH(X) = " << entropy << std::endl;
 
     return 0;
 }

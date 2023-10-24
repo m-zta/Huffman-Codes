@@ -13,14 +13,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # add compile definitions
 # i.e. add_definitions(-DMI_DEFINITION)
 
-# specify directories where the compiler should look for headers
-include_directories(${CMAKE_SOURCE_DIR}/include)
-
 # specify directories where the linker should look for libraries
 file(GLOB SOURCES "src/*.cpp") 
 
 # add the executable
 add_executable(huffman ${SOURCES})
+
+# specify directories where the compiler should look for headers
+target_include_directories(huffman PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 # add library
 # i.e. add_library(my_library ${SOURCES})

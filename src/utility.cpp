@@ -54,6 +54,7 @@ std::vector<char> getSymbols() {
             std::cout << "Invalid input.";
             continue;
         } else if (symbol == '-') {
+            std::cout << '\n';
             break;
         } else if (symbol == 'q') {
             exit(0);
