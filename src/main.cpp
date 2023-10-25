@@ -1,22 +1,16 @@
 #include <iostream>
+#include <string>
 #include <vector>
+#include <algorithm>
+
 #include "huffman.hpp"
 #include "utility.hpp"
+#include "stringify.hpp"
+#include "vector_operations.hpp"
+#include "io.hpp"
 
 int main() {
-    std::cout << "First enter the characters, than the corresponding probabilites:\n";
-    std::vector<char> symbolVector {};
-    printVector(symbolVector);
+    print_welcome_message();
+
     
-    symbolVector = getSymbols();
-    printVector(symbolVector);
-    std::vector<double> probVector = getProbabilities(symbolVector);
-
-    huffman huf {symbolVector, probVector};
-
-    double entropy = calculateEntropy(probVector);
-
-    std::cout << "Entropy:\tH(X) = " << entropy << std::endl;
-
-    return 0;
 }
