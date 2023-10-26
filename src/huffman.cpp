@@ -16,10 +16,10 @@ huffman::huffman(std::vector<char> symbols, std::vector<double> probabilities)
 
 // Prints the table of symbols and their probabilities
 void huffman::print() {
-    printString(horizontal_line(symbols.size() * 10 + 10) + "\n");
+    print_string(horizontal_line(symbols.size() * 10 + 10) + "\n");
     print_table_row(symbols, "Symbols");
     print_table_row(probabilities, "Probabilities");
-    printString(horizontal_line(symbols.size() * 10 + 10) + "\n");
+    print_string(horizontal_line(symbols.size() * 10 + 10) + "\n");
 }
 
 // Adds a symbol to the table
@@ -31,3 +31,4 @@ void huffman::add_symbol(char symbol) {
 void huffman::add_probability(double probability) {
     probabilities.push_back(probability);
 }
+

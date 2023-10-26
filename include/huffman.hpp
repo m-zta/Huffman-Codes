@@ -1,3 +1,6 @@
+#ifndef HUFFMAN_HPP
+#define HUFFMAN_HPP
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -27,3 +30,5 @@ class huffman {
         // Adds a probability to the table
         void add_probability(double probability);
 };
+
+#endif // HUFFMAN_HPP
