@@ -18,6 +18,15 @@ int main() {
     std::string symbols_string {};
     std::getline(std::cin, symbols_string);
 
+    // std::vector<char> test {};
+    // for (char ch : symbols_string) {
+    //     test.push_back(ch);
+    // }
+
+    // for (char ch : test) {
+    //     std::cout << ch << ' ' << std::endl;
+    // }
+
     // Convert the symbol string to a vector of chars
     std::vector<char> symbols = string_to_vector(symbols_string);
     print_vector(symbols);
@@ -42,5 +51,5 @@ int main() {
 
     // Print the average code length
 
-
+    return 0;
 }

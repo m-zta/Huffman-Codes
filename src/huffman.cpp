@@ -17,8 +17,8 @@ huffman::huffman(std::vector<char> symbols, std::vector<double> probabilities)
 // Prints the table of symbols and their probabilities
 void huffman::print() {
     print_string(horizontal_line(symbols.size() * 10 + 10) + "\n");
-    print_table_row(symbols, "Symbols");
-    print_table_row(probabilities, "Probabilities");
+    print_table_row("Symbols", symbols);
+    print_table_row("Probabilities", probabilities);
     print_string(horizontal_line(symbols.size() * 10 + 10) + "\n");
 }
 
