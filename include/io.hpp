@@ -4,9 +4,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cmath>
 
 #include "io.hpp"
 #include "stringify.hpp"
+
+// ==================================================================================
+// Method declarations
+// ==================================================================================
 
 // Prints a string to the console
 void print_string(const std::string& str);
@@ -14,37 +19,33 @@ void print_string(const std::string& str);
 // Prints a welcome message
 void print_welcome_message();
 
+// ==================================================================================
+// Generic functions
+// ==================================================================================
+
 // Prints a vector of type T
 template <typename T>
-inline void print_vector(const std::vector<T>& vector) {
-    print_string(vector_to_string(vector) + "\n");
-}
-
-// Prints a vector of char
-template <>
-inline void print_vector(const std::vector<char>& vector) {
+void print_vector(const std::vector<T>& vector) {
     print_string(vector_to_string(vector) + "\n");
 }
 
 // Prints a row of type T
 template <typename T>
-inline void print_table_row(const std::string& row_name, const std::vector<T>& row) {
+void print_table_row(const std::string& row_name, const std::vector<T>& row) {
     print_string("| " + row_name + " ");
 
-    for (int i = 0; i < row.size(); i++) {
-        print_string("| " + std::to_string(row[i]) + " ");
-    }
+    for (int i {0}; i < row.size(); i++) {
+        std::string str {"| "};
 
-    print_string("|\n");
-}
+        if (row_name == "Probabilities") {
+            str += std::to_string(std::round(row.at(i) * 100) / 100);
+            str += "% ";
+        } else {
+            str += row.at(i);
+        }
 
-// Prints a row of characters
-template <>
-inline void print_table_row(const std::string& row_name, const std::vector<char>& row) {
-    print_string("| " + row_name + " ");
-
-    for (int i = 0; i < row.size(); i++) {
-        print_string("| " + std::to_string(row[i]) + " ");
+        str += " ";
+        print_string(str);
     }
 
     print_string("|\n");

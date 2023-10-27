@@ -16,19 +16,29 @@ class huffman {
     private:
         std::vector<char> symbols;
         std::vector<double> probabilities;
+        const bool test_mode {false};
 
     public:
         // Constructor
         huffman(std::vector<char> symbols, std::vector<double> probabilities);
 
         // Prints the table of symbols and their probabilities
-        void print();
+        void print_table();
+
+        // Prints the symbols of the table
+        void print_symbols();
 
         // Adds a symbol to the table
         void add_symbol(char symbol);
 
         // Adds a probability to the table
         void add_probability(double probability);
+
+        // Get the symbols from the user
+        void get_symbols();
+
+        // Get the probabilities from the user
+        void get_probabilities();
 };
 
 #endif // HUFFMAN_HPP

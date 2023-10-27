@@ -13,29 +13,19 @@ int main() {
     // Print the welcome message
     print_welcome_message();
 
+    huffman huffman_table {{}, {}};
+
     // Get the symbols as a string from the user
-    print_string("Enter the symbols: ");
-    std::string symbols_string {};
-    std::getline(std::cin, symbols_string);
+    huffman_table.get_symbols();
 
-    // std::vector<char> test {};
-    // for (char ch : symbols_string) {
-    //     test.push_back(ch);
-    // }
-
-    // for (char ch : test) {
-    //     std::cout << ch << ' ' << std::endl;
-    // }
-
-    // Convert the symbol string to a vector of chars
-    std::vector<char> symbols = string_to_vector(symbols_string);
-    print_vector(symbols);
+    // Print the symbols
+    huffman_table.print_symbols();
 
     // Get the probabilities
-
-    // Create the Huffman table
+    huffman_table.get_probabilities();
 
     // Print the Huffman table
+    huffman_table.print_table();
 
     // Calculate the entropy
 
