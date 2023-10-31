@@ -18,13 +18,17 @@ huffman::huffman(std::vector<char> symbols, std::vector<double> probabilities)
         print_string("Symbols and probabilities are not the same size!\n");
         return;
     }
+
+    fit_to_100(probabilities);
 }
 
 // Prints the table of symbols and their probabilities
 void huffman::print_table() {
+    unsigned int max_length = get_max_length(labels);
+
     print_string(horizontal_line(symbols.size() * 10 + 10) + "\n");
-    print_table_row("Symbols", symbols);
-    print_table_row("Probabilities", probabilities);
+    print_table_row("Symbols", max_length, symbols);
+    print_table_row("Probabilities", max_length, probabilities);
     print_string(horizontal_line(symbols.size() * 10 + 10) + "\n");
 }
 
@@ -81,4 +85,7 @@ void huffman::get_probabilities() {
         std::cin >> probability;
         probabilities.push_back(probability);
     }
+
+    // Normalize the probabilities
+    fit_to_100(probabilities);
 }

@@ -16,7 +16,9 @@ class huffman {
     private:
         std::vector<char> symbols;
         std::vector<double> probabilities;
-        const bool test_mode {false};
+
+        const bool test_mode {true};
+        std::vector<std::string> labels {"Symbols", "Probabilities"};
 
     public:
         // Constructor

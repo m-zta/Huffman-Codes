@@ -30,3 +30,16 @@ bool fit_to_100(std::vector<double>& vec) {
 
     return true;
 }
+
+// Returns the maximum length of a string in a std::vector
+unsigned int get_max_length(const std::vector<std::string>& vec) {
+    unsigned int max_length {0};
+
+    for (std::string i : vec) {
+        if (i.length() > max_length) {
+            max_length = i.length();
+        }
+    }
+
+    return max_length;
+}

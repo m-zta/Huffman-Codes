@@ -11,4 +11,6 @@ double get_sum(std::vector<double>& vec);
 // Scales the elements of the vector to a sum of 100
 bool fit_to_100(std::vector<double>& vec);
 
+unsigned int get_max_length(const std::vector<std::string>& vec);
+
 #endif // VECTOR_OPERATIONS_HPP

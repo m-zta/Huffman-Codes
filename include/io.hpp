@@ -31,8 +31,15 @@ void print_vector(const std::vector<T>& vector) {
 
 // Prints a row of type T
 template <typename T>
-void print_table_row(const std::string& row_name, const std::vector<T>& row) {
-    print_string("| " + row_name + " ");
+void print_table_row(const std::string& row_name, const unsigned int& max_length, const std::vector<T>& row) {
+    unsigned int label_length = row_name.length();
+
+    std::string space {""};
+    for (unsigned int i {0}; i < max_length - label_length; i++) {
+        space += " ";
+    }
+
+    print_string("| " + row_name + space + " ");
 
     for (int i {0}; i < row.size(); i++) {
         std::string str {"| "};
