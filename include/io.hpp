@@ -45,8 +45,14 @@ void print_table_row(const std::string& row_name, const unsigned int& max_length
         std::string str {"| "};
 
         if (row_name == "Probabilities") {
-            str += std::to_string(std::round(row.at(i) * 100) / 100);
-            str += "% ";
+            std::string newstr = std::to_string((std::floor(10 * row.at(i)) / 10));
+            // TODO: Improve this extremely ugly solution
+            newstr.pop_back();
+            newstr.pop_back();
+            newstr.pop_back();
+            newstr.pop_back();
+            str += newstr;
+            str += " %";
         } else {
             str += row.at(i);
         }

@@ -17,12 +17,12 @@ class huffman {
         std::vector<char> symbols;
         std::vector<double> probabilities;
 
-        const bool test_mode {true};
-        std::vector<std::string> labels {"Symbols", "Probabilities"};
+        bool test_mode;
+        std::vector<std::string> labels;
 
     public:
         // Constructor
-        huffman(std::vector<char> symbols, std::vector<double> probabilities);
+        huffman(std::vector<char> symbols = {}, std::vector<double> probabilities = {}, bool test_mode = false, std::vector<std::string> labels = {"Symbols", "Probabilities"});
 
         // Prints the table of symbols and their probabilities
         void print_table();
@@ -41,6 +41,12 @@ class huffman {
 
         // Get the probabilities from the user
         void get_probabilities();
+
+        // Set or disable test mode
+        void set_test_mode(const bool& value);
+        
+        // Get test mode value
+        bool get_test_mode();
 };
 
 #endif // HUFFMAN_HPP

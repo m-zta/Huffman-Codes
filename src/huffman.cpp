@@ -11,8 +11,8 @@
 #include "io.hpp"
 
 // Constructor
-huffman::huffman(std::vector<char> symbols, std::vector<double> probabilities)
-    : symbols {symbols}, probabilities {probabilities} {
+huffman::huffman(std::vector<char> symbols, std::vector<double> probabilities, bool test_mode, std::vector<std::string> labels)
+    : symbols {symbols}, probabilities {probabilities}, test_mode {test_mode}, labels {labels} {
     // Check if the symbols and probabilities are the same size
     if (symbols.size() != probabilities.size()) {
         print_string("Symbols and probabilities are not the same size!\n");
@@ -68,6 +68,7 @@ void huffman::get_symbols() {
 
     // Convert the symbol string to a vector of chars
     symbols = string_to_vector(symbols_string);
+    print_string("\n");
 }
 
 // Get the probabilities from the user
@@ -89,3 +90,14 @@ void huffman::get_probabilities() {
     // Normalize the probabilities
     fit_to_100(probabilities);
 }
+
+// Get test mode value
+bool huffman::get_test_mode() {
+    return this->test_mode;
+}
+
+// Enable or disable test mode
+void huffman::set_test_mode(const bool& value) {
+    this->test_mode = value;
+}
+

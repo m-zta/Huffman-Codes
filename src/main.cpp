@@ -14,9 +14,11 @@ int main() {
     print_welcome_message();
 
     huffman huffman_table {{}, {}};
+    huffman_table.set_test_mode(false);
 
-    // Get the symbols as a string from the user
-    huffman_table.get_symbols();
+    if (!huffman_table.get_test_mode()) {
+        huffman_table.get_symbols();
+    }
 
     // Print the symbols
     huffman_table.print_symbols();
